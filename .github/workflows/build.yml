@@ -29,4 +29,4 @@ jobs:
         run: |
           ./gradlew sonarqube \
             -Dsonar.login="${{ secrets.SONAR_TOKEN }}" \
-            -Dsonar.host.url="http://localhost:9000"  # Hier localhost en poort 9000 gebruiken
+            -Dsonar.host.url="http://localhost:9000"
