@@ -36,13 +36,13 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
 
       - name: Add execute permissions to Gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x ./gradlew.bat
 
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: ./gradlew build sonar --info -x test
+        run: ./gradlew.bat build sonar --info -x test
 
       - name: Run a one-line script
         run: echo Hello, world!
