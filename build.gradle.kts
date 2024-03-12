@@ -19,9 +19,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
-sonar {
+sonarqube {
     properties {
         property("sonar.projectKey", "Test123")
         property("sonar.projectName", "Test123")
+        property("sonar.login", project.findProperty("sonar.login") ?: System.getenv("SONAR_LOGIN"))
     }
 }
