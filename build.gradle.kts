@@ -24,5 +24,6 @@ sonar {
         property("sonar.login", "sqp_d85aa2c54777d57e21494ab21432e61a037d6d3a")
         property("sonar.projectKey", "Test123")
         property("sonar.projectName", "Test123")
+        property("sonar.host.url", "http://localhost:9000") // Hier localhost en poort 9000 gebruiken
     }
 }
