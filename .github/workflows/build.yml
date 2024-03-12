@@ -25,8 +25,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Analyze with SonarQube
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      run: ./gradlew sonar --info
+     - name: Analyze with SonarQube
+        run: |
+          ./gradlew sonarqube \
+            -Dsonar.login="${{ secrets.SONAR_TOKEN }}" \
+            -Dsonar.host.url="http://localhost:9000"  # Hier localhost en poort 9000 gebruiken
